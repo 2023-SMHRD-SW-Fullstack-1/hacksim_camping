@@ -31,7 +31,7 @@ function App() {
   return (
 
     <div className='App'>
-      <Nav/>
+      <Header/>
            <Routes>
                   <Route path="/" element={<StoryList list={list}/>}></Route>
                   <Route path="/detail" element={<StoryDetail/>}></Route>

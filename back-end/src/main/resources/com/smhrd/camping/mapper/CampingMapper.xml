@@ -14,7 +14,7 @@
   	</select>
   <!-- ComunityList, ComunityOne -->	
   	<select id="ComunityList" resultType="com.smhrd.camping.domain.Comunity">
-  		select STORY_CONTENT, STORY_TITLE from TB_Story
+  		select * from TB_Story
   	</select>
   	
   	<select id="ComunityOne" resultType="com.smhrd.camping.domain.Category">

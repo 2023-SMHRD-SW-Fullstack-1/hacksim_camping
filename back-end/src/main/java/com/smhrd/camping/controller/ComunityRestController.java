@@ -25,20 +25,21 @@ public class ComunityRestController {
 	@Autowired
 	private ComunityService service;
 	
-	@GetMapping("/comunity")
+	@GetMapping("/comunity") // 게시글 가져오기
 	public JSONArray ComunityList() {
+		System.out.println("테스트");
 		JSONArray array = service.ComunityList();
 		
 		return array;
 	}
 	
-	@GetMapping("/{idx}")
+	@GetMapping("/{idx}") 
 	public JSONObject ComunityOne(@PathVariable("idx") int idx) {
 		return service.ComunityOne(idx);
 	}
 	
 	
-	@PostMapping("/comunity/write")
+	@PostMapping("/comunity/write") // 글 업로드하기
 	public String write(Comunity c, @RequestPart("story_img") MultipartFile file) {
 		String newFileName = UUID.randomUUID().toString() + file.getOriginalFilename();
 		// 이미지 file -> 저장(지정된 경로에)
@@ -66,12 +67,13 @@ public class ComunityRestController {
 		
 	}
 	
-	@GetMapping("/comunity/a")
+	@GetMapping("/comunity/a") //카테고리 가져오기
 	public String category() { //carray : 카테고리 스텝 array
 		String carray = service.CategoryStep();
 		return carray;
+		}
 		
-	}
+	
 
 	
 	

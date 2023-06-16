@@ -3,7 +3,7 @@ import { useNavigate, useSearchParams } from "react-router-dom";
 
 const SearchBar = () => {
 
-  const [searchKeyWord, setSearchKeyWord] = useState("");
+    const [searchKeyWord, setSearchKeyWord] = useState("");
 
      // useSearchParams는 URL에 쿼리 스트링을 입력해준다.
   const [searchParams, setSearchParams] = useSearchParams();
