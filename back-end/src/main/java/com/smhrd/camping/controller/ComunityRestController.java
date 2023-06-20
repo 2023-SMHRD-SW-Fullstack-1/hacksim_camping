@@ -2,6 +2,7 @@ package com.smhrd.camping.controller;
 
 import java.io.File;
 import java.io.IOException;
+import java.util.List;
 import java.util.UUID;
 
 import org.json.simple.JSONArray;
@@ -16,6 +17,7 @@ import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.multipart.MultipartFile;
 
 import com.smhrd.camping.domain.Comunity;
+import com.smhrd.camping.domain.Member;
 import com.smhrd.camping.service.ComunityService;
 
 @RestController
@@ -73,8 +75,9 @@ public class ComunityRestController {
 		return carray;
 		}
 		
-	
+
+	}
 
 	
 	
-}
+

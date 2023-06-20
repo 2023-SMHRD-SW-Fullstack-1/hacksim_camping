@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import { useNavigate, useSearchParams } from 'react-router-dom'
 import axios from 'axios'
+// import StoryItem from './StoryItem'
 
 const StoryList = ({}) => {
   const [list, setList] = useState([]);
@@ -16,7 +17,7 @@ const StoryList = ({}) => {
      
     //type filter 작업을 거치고 사용할 list
 
-   const[typeParams, setTypeParams] = useSearchParams()
+   const[typeParams, setTypeParams] = useSearchParams('');
    let type = typeParams.get('type')
  
 
@@ -26,15 +27,10 @@ const StoryList = ({}) => {
    const nav = useNavigate()
   return (
     <div className='a'>
-      
+     
       {
         list.map((item)=> (<div>글 제목 : {item.comunity.story_title}</div>))
       }
-        
-      
-
-
-
     </div>
   )
 }

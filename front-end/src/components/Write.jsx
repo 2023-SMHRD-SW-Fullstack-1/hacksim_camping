@@ -33,7 +33,7 @@ const Write = () => {
 	};
 
 	const getTagCategory = (e)=>{
-		axios.get("http://172.30.1.21:8088/gocamping/comunity/a")
+		axios.get("http://localhost:8088/gocamping/comunity/a")
 		.then((res)=>{
 			e.preventDefault();
 			console.log(res.data);

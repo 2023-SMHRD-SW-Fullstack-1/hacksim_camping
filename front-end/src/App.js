@@ -3,7 +3,7 @@ import './App.css';
 import Figure from './components/Figure';
 import Header from './components/Header';
 import Footer from './components/Footer';
-import {Routes, Route} from 'react-router-dom'
+import {Routes, Route, BrowserRouter} from 'react-router-dom'
 import { useEffect, useState } from 'react';
 import axios from 'axios';
 import StoryList from './components/StoryList';
@@ -15,21 +15,21 @@ function App() {
  
   const[list,setList] = useState([])
 
-  // useEffect(()=>{
-  //   //화면이 mount 되었을 때 back-end Data를 가져오겠다. 
+  useEffect(()=>{
+    //화면이 mount 되었을 때 back-end Data를 가져오겠다. 
 
-  //   axios.get('http://172.30.1.9:8082/gocamping/')
-  //   .then((res)=>{
-  //     console.log('결과 :',res.data)
-  //     setList(res.data)
-  //   })
-  // },[])
+    axios.get('http://172.30.1.9:8088/gocamping/')
+    .then((res)=>{
+      console.log('결과 :',res.data)
+      setList(res.data)
+    })
+  },[])
 
 
 
 
   return (
-
+   
     <div className='App'>
       <Header/>
            <Routes>
@@ -41,6 +41,7 @@ function App() {
       <Footer />
 
     </div>
+
 
   );
 }
