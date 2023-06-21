@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import { useNavigate, useSearchParams } from 'react-router-dom'
 import axios from 'axios'
-// import StoryItem from './StoryItem'
+ import StoryItem from './StoryItem'
 
 const StoryList = ({}) => {
   const [list, setList] = useState([]);
