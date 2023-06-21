@@ -3,14 +3,14 @@
 
 // const SearchBar = () => {
 
-//     const [searchKeyWord, setSearchKeyWord] = useState("");
+//   const [searchKeyWord, setSearchKeyWord] = useState("");
 
 //      // useSearchParams는 URL에 쿼리 스트링을 입력해준다.
 //   const [searchParams, setSearchParams] = useSearchParams();
   
 //   const navigate = useNavigate();
 
-//   const onChangeHandler = (e: React.ChangeEvent<HTMLInputElement>) => {
+//   // const onChangeHandler = (e: React.ChangeEvent<HTMLInputElement>) => {
 //     setSearchKeyWord(e.target.value);
 //   };
 

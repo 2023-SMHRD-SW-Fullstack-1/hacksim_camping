@@ -1,6 +1,8 @@
 import React from 'react';
 import  '../Figure.css'
 const Figure = () => {
+    
+
     return (
 <div id="columns">
         <figure>
@@ -47,14 +49,6 @@ const Figure = () => {
           <img src="https://image.ohou.se/i/bucketplace-v2-development/uploads/cards/projects/165087712298320287.jpeg"/>
           <figcaption>바다로 떠나는  물멍 바다캠핑</figcaption>
         </figure>	
-{/* 
-    {comunity.map(image => (
-        <figure key={image.idx}>
-          <img src={image.url} alt={image.caption} />
-          <figcaption>{image.caption}</figcaption>
-        </figure>
-      ))}
-    </div> */}
 
     </div>
     );
