@@ -3,6 +3,10 @@
 
 // import { BrowserRouter, Route , Switch } from 'react-router-dom'
 
+import 'bootstrap/dist/css/bootstrap.min.css';
+import Nav from './components/Nav'
+
+
 import Figure from './components/Figure';
 import Header from './components/Header';
 import Footer from './components/Footer';
@@ -32,6 +36,10 @@ import Mypage from './components/Mypage';
 
 import Mypage_U from './components/Mypage_U';
 import Comment from './components/Comment';
+
+import ComunityDetail from './components/ComunityDetail';
+import Item from './components/Item';
+
 
 
 
@@ -109,11 +117,12 @@ function App() {
   const [user_nick, setUser_Nick] = useState("");
   const[user_type,setUser_Type] = useState("");
 
-
   return (
 
     <div>
-      <Header />
+
+      <Nav />
+
       <Routes>
 
 
@@ -125,11 +134,15 @@ function App() {
       
         {/* <Route path='/' element={<Figure /> } />
         <Route path='/write1' element={<Write />} />
-        <Route path="/content" element={<ContentDetail tableMarginTB={0} tableWidth={"100%"} contentImgWidth={"45%"} contentImgHeight={"80%"} />} />
+
         <Route path="/comunity" element={<SyLoadBoardList /> }/> */}
 
-
+        
+        <Route path="/ContentDeatil/:num" element={<ContentDetail tableMarginTB={0} tableWidth={"100%"} contentImgWidth={"45%"} contentImgHeight={"80%"} comunity={comunity} setComunity={setComunity}/>} />
       
+      {/* <Route path='/ComunityDetail:num' element={<ComunityDetail comunity={comunity}/>}></Route> */}
+
+
 
 
       <Route path='/' element={<Figure/>} />
