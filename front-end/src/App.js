@@ -30,73 +30,18 @@ import KakaoCallBack2 from './components/KakaoCallBack2';
 import Mypage from './components/Mypage';
 
 
-import Mypage_U from './components/Mypage_U';
-import Comment from './components/Comment';
+import Logout from './components/Logout';
+import MyPage_U from './components/Mypage_U';
+import CommentList from './components/CommentList';
+import Update from './components/Update';
+import Comment_HJ from './components/Comment_HJ';
 
 
 
 
 function App() {
+ 
 
-
-  
-  // const formData = new FormData();
-
-
-
-  // useEffect(()=>{
-  // axios.get("http://172.30.1.21:8088/gocamping/comunity/a")
-  // .then((res)=>{
-  //   console.log('결과',res.data);
-  //   })
-  // },[])
-
-
-//   useEffect(()=>{
-//   axios.post("http://172.30.1.43:8088/gocamping/comunity/write",
-//   // formData,
-//   // { 
-//   //   headers:{"Content-Type" : "multipart/form-data"}
-//   // }
-// )
-//   .then((res)=>{
-//     console.log('결과',res.data);
-//     })
-//   },[])
-// useEffect(() => {
-//   const formData = new FormData();
-//   formData.append('imageUrl', selectedFile);
-
-//   axios
-//     .post('http://172.30.1.43:8088/gocamping/comunity/write', formData)
-//     .then((res) => {
-//       console.log('결과', res.data);
-//     })
-//     .catch((error) => {
-//       console.error('에러', error);
-//     });
-// }, []);
-
-
-  
-
-//   return (
-
-
-//     <div>
-//       <Header />
-//       <Routes>
-      
-//         <Route path='/' element={<Figure /> } />
-//         <Route path='/write1' element={<Write />} />
-//       </Routes>
-
-//       <Footer />
-
-//     </div>
-
-//   );
-// }function App() {
   
   const [inputTitle, setInputTitle] = useState("");
   const [inputUserEmail, setInputUserEmail] = useState("");
@@ -104,10 +49,6 @@ function App() {
   const [comunity, setComunity] = useState([]);
 
 
-  const [user_email,setUser_Email] = useState("");
-  const [user_pw, setUser_PW] = useState("");
-  const [user_nick, setUser_Nick] = useState("");
-  const[user_type,setUser_Type] = useState("");
 
 
   return (
@@ -122,25 +63,23 @@ function App() {
         <Route path="/write1" element={<Write_Test inputTitle={inputTitle} setInputTitle={setInputTitle} inputUserEmail={inputUserEmail} setInputUserEmail={setInputUserEmail} inputContent={inputContent} setInputContent={setInputContent}/>} />
         <Route path='/main' element={<MainList comunity={comunity} setComunity={setComunity}/>}/>
 
-      
-        {/* <Route path='/' element={<Figure /> } />
-        <Route path='/write1' element={<Write />} />
-        <Route path="/content" element={<ContentDetail tableMarginTB={0} tableWidth={"100%"} contentImgWidth={"45%"} contentImgHeight={"80%"} />} />
-        <Route path="/comunity" element={<SyLoadBoardList /> }/> */}
-
 
       
 
 
       <Route path='/' element={<Figure/>} />
+      {/* 내가 단 댓글목록 */}
+      <Route path='/mycomment' element={<Comment_HJ/>} />
+      <Route path='/logout' element={<Logout/>} />
       <Route path='/mypage' element={<Mypage/>}/>
-      <Route path='/login' element={<Login user_email={user_email} setUser_Email={setUser_Email} user_pw={user_pw} setUser_PW={setUser_PW}/>}/>
-      <Route path='/join' element={<Join user_type={user_type} setUser_Type={setUser_Type} user_nick={user_nick} setUser_Nick={setUser_Nick} user_email={user_email} setUser_Email={setUser_Email} user_pw={user_pw} setUser_PW={setUser_PW} />} />
-      <Route path='/kakaocallback' element={<KakaoCallBack user_type={user_type} setUser_Type={setUser_Type} user_nick={user_nick} setUser_Nick={setUser_Nick} user_email={user_email} setUser_Email={setUser_Email} user_pw={user_pw} setUser_PW={setUser_PW}/>}/>
-      <Route path='/kakaocallback2' element={<KakaoCallBack2 user_type={user_type} setUser_Type={setUser_Type} user_nick={user_nick} setUser_Nick={setUser_Nick} user_email={user_email} setUser_Email={setUser_Email} user_pw={user_pw} setUser_PW={setUser_PW}/>}/>
-      {/* 여기부터~~ */}
-      <Route path='/mypage_U' element={<Mypage_U/>} />
-      <Route path='/comment' element={<Comment/>} />
+      <Route path='/login' element={<Login/>}/>
+      <Route path='/join' element={<Join/>} />
+      <Route path='/kakaocallback' element={<KakaoCallBack/>}/>
+      <Route path='/kakaocallback2' element={<KakaoCallBack2/>}/>
+           {/* 여기부터~~ */}
+           <Route path='/mypage_U' element={<MyPage_U/>} />
+      <Route path='/commentList' element={<CommentList/>} />
+      <Route path='/update' element={<Update/>} />
       {/* 여기까지~~ */}
 
       </Routes>
