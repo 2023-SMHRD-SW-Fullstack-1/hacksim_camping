@@ -41,7 +41,7 @@ const Login = () => {
                                 <h1>Sign In</h1>
                                 <div className="social-links">                                   
                                     <div>
-                                        <a href="#"><i class="fa-brands fa-google"/></a>
+                                        <a href="#"><i className="fa-brands fa-google"/></a>
                                     </div>
                                     <div>
                                         <a href="#"><i className="fa fa-linkedin" aria-hidden="true"></i></a>
@@ -50,7 +50,7 @@ const Login = () => {
                                 <span>SNS 로그인</span>
                                 <input type="email" placeholder="Email" />
                                 <input type="password" placeholder="Password" />
-                                <button class="form_btn">Sign In</button>
+                                <button className="form_btn">Sign In</button>
                             </form>
                         </div>
                         <div className="overlay-container">

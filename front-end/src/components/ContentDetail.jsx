@@ -10,7 +10,7 @@ const ContentDetail = ({tableMarginTB, contentImgHeight, contentImgWidth, tableW
 
 	const [index, setIndex] = useState(0);
 	axios
-          .get(`http://172.30.1.43:8088/gocamping/comunity/${num}`)
+          .get(`http://172.30.1.9:8088/gocamping/comunity/${num}`)
           .then((res) => {
             console.log('API Response:', res.data);
             setComunity(res.data);

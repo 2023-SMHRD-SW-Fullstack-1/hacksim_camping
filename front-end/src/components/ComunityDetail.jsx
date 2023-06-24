@@ -19,7 +19,7 @@ const ComunityDetail = ({comunity}) => {
   return (
     <div id='columns'>
       <figure>
-        <img src={`http://172.30.1.43:8088/gocamping/${comunity.comunity[num].story_img}`} alt="" width="100px" />
+        <img src={`http://172.30.1.9:8088/gocamping/${comunity.comunity[num].story_img}`} alt="" width="100px" />
 
         <figcaption>
           제목 : {comunity.comunity[num].story_title}

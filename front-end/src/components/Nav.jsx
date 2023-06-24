@@ -19,7 +19,7 @@ const Nav = () => {
           </div>
           <div>
         <li className="nav-item">
-          {/* <a class="nav-link" href="#">Link</a>  */}
+          {/* <a className="nav-link" href="#">Link</a>  */}
           <Link to="/list">Link</Link>  
         </li>
         </div>
@@ -40,7 +40,7 @@ const Nav = () => {
       </ul>
 
       <form className="d-flex" role="search">
-        <input className="form-control me-2" type="search" placeholder="Search" aria-label="Search" />
+        <input className="form-control me-2" type="search" placeholder="Search" aria-label="Search"/>
         <button className="btn btn-outline-success" type="submit" > Search</button>
       </form>
       <form>

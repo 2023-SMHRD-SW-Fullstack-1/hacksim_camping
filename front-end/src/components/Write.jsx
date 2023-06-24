@@ -71,7 +71,7 @@ const Write = () => {
       formData.append('file', story_img);
       console.log("4 story_img", formData.get("file"))
 
-      axios.post('http://172.30.1.43:8088/gocamping/comunity/write', formData, {
+      axios.post('http://172.30.1.9:8088/gocamping/comunity/write', formData, {
          headers: {
             'Content-Type': 'multipart/form-data'
          }
@@ -89,7 +89,7 @@ const Write = () => {
 
 
    const getTagCategory = (e) => {
-      axios.get("http://172.30.1.43:8088/gocamping/comunity/a")
+      axios.get("http://172.30.1.9:8088/gocamping/comunity/a")
          .then((res) => {
             e.preventDefault();
             console.log(res.data);

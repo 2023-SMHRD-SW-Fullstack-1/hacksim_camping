@@ -40,12 +40,41 @@ import Comment from './components/Comment';
 import ComunityDetail from './components/ComunityDetail';
 import Item from './components/Item';
 
+import intro from './intro-video.gif'
 
+import Header2 from "./components/Header2.jsx"
+import Notice from "./components/Notice.jsx"
+
+import "./header2.js"
+// core version + navigation, pagination modules:
+// import Swiper, { Navigation, Pagination } from 'swiper';
+// // import Swiper and modules styles
+// import 'swiper/css';
+// import 'swiper/css/navigation';
+// import 'swiper/css/pagination';
+// // import Swiper bundle with all modules installed
+
+
+// // import styles bundle
+// import 'swiper/css/bundle';
+// import Swiper styles
+import 'swiper/css';
+// core version + navigation, pagination modules:
+
+// import Swiper and modules styles
+import 'swiper/css';
+import 'swiper/css/navigation';
+import 'swiper/css/pagination';
+// import Swiper bundle with all modules installed
+import Swiper from 'swiper/bundle';
+
+// import styles bundle
+import 'swiper/css/bundle';
 
 
 
 function App() {
-
+  
 
   
   // const formData = new FormData();
@@ -118,11 +147,24 @@ function App() {
   const[user_type,setUser_Type] = useState("");
 
   return (
-
+    
     <div>
+{/* 수진 */}
+{/* <Header/> */}
+{/* <Nav/> */}
+<Header2/>
+      {/* 여기가 동영상 코드 */}
+      <div style={{height:"56px"}}></div>
+      <div style={{height:'50vh',background:`url(${intro})`,backgroundSize:'cover', textAlign:"center", padding:"auto 0", display:"flex",justifyContent:"center" ,alignItems:"center"}}>
+        <h1 style={{display:"inline-block", color:"white", fontSize:"7.5vw", fontWeight:"900", fontFamily:"Pretendard Variable"}}> 모두의 캠핑 </h1>
+      </div>
 
-      <Nav />
+      {/* <div style={{height:'100vh',background:`url(${intro})`,backgroundSize:'cover', backgroundRepeat: 'no-repeat' }}></div> */}
 
+<Notice />
+      
+      
+    
       <Routes>
 
 
