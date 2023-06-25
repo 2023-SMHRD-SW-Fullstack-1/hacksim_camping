@@ -1,89 +1,51 @@
 
 // import './App.css';
-
 // import { BrowserRouter, Route , Switch } from 'react-router-dom'
+import { useState, useEffect } from 'react';
+import { Routes, Route, Link } from 'react-router-dom'
+import axios from 'axios'
+import 'bootstrap/dist/css/bootstrap.min.css';
+import Navbar from 'react-bootstrap/Navbar'
 
+
+//컴포넌트
+import Nav from './components/Nav'
 import Figure from './components/Figure';
 import Header from './components/Header';
 import Footer from './components/Footer';
-// import Write from './components/Write';
 import Write_Test from './components/Write_Test'
-import { useState, useEffect } from 'react';
 import Write from './components/Write';
 import ContentDetail from './components/ContentDetail';
 import SyLoadBoardList from './components/SyLoadBoardList';
-import axios from 'axios'
-import { Routes, Route, Link } from 'react-router-dom'
 import MainList from './components/MainList';
+import Comment from './components/Comment';
+
 import Join from './components/Join';
 import Login from './components/Login';
 import KakaoCallBack from './components/KakaoCallBack';
 import KakaoCallBack2 from './components/KakaoCallBack2';
+
 import Mypage from './components/Mypage';
 import Mypage_U from './components/Mypage_U';
-import Comment from './components/Comment';
-import Test from './components/Test';
-import Nav from './components/Nav'
-import Navbar from 'react-bootstrap/Navbar'
-import 'bootstrap/dist/css/bootstrap.min.css';
 
+// 임시
+import Test from './components/Test';
+
+
+// 추가
+// import ComunityDetail from './components/ComunityDetail';
+// import Item from './components/Item';
+// import Logout from './components/Logout';
+// import Update from './components/Update.jsx';
 
 function App() {
-	
-
-
-//   useEffect(()=>{
-//   axios.post("http://172.30.1.43:8088/gocamping/comunity/write",
-//   // formData,
-//   // { 
-//   //   headers:{"Content-Type" : "multipart/form-data"}
-//   // }
-// )
-//   .then((res)=>{
-//     console.log('결과',res.data);
-//     })
-//   },[])
-// useEffect(() => {
-//   const formData = new FormData();
-//   formData.append('imageUrl', selectedFile);
-
-//   axios
-//     .post('http://172.30.1.43:8088/gocamping/comunity/write', formData)
-//     .then((res) => {
-//       console.log('결과', res.data);
-//     })
-//     .catch((error) => {
-//       console.error('에러', error);
-//     });
-// }, []);
-
-
-  
-
-//   return (
-
-
-//     <div>
-//       <Header />
-//       <Routes>
-      
-//         <Route path='/' element={<Figure /> } />
-//         <Route path='/write1' element={<Write />} />
-//       </Routes>
-
-//       <Footer />
-
-//     </div>
-
-//   );
-// }function App() {
-  
+	// 글쓰기
 	const [inputTitle, setInputTitle] = useState("");
 	const [inputUserEmail, setInputUserEmail] = useState("");
 	const [inputContent, setInputContent] = useState("");
 	const [comunity, setComunity] = useState([]);
 
-
+	// 로그인, 회원가입
 	const [user_email, setUser_Email] = useState("");
 	const [user_pw, setUser_PW] = useState("");
 	const [user_nick, setUser_Nick] = useState("");
@@ -94,6 +56,7 @@ function App() {
 
 		<div>
 			<Nav/>
+			{/* <Header /> */}
 			<div style={{height:"80px"}}></div>
 			
 			<Link to="/">홈 메인화면 </Link>|
