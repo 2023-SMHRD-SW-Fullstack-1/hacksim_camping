@@ -1,6 +1,6 @@
 import axios from 'axios';
 import React, { useEffect, useState } from 'react'
-
+import '../CommentTable.css'
 import Modal from './Modal';
 
 
@@ -15,7 +15,7 @@ const [content,setContent] = useState('');
 const showModal = (e) => {
   const value = e.target.getAttribute("value");
   setContent(e.target.innerText)
-  console.log(value);
+  console.log("e.target.value :",e.target.value);
   console.log('클릭모달:', value);
   setSelectedValue(value);
   setModalOpen(true);
@@ -89,14 +89,15 @@ const [innerContent,setInnerContent] = useState();
 
   return (
 
-<div>
-<table border="1" align='center' width={600}>
+<div id='commentTable'>
+  <div id='hj_comment'>작성 댓글</div>
+<table  border="1" align='center' width={600}>
   <tbody align='center'>
     <tr>
-      <td>글 제목</td>
-      <td>내가 작성한 댓글 내용</td>
-      <td>댓글 작성일</td>
-      <td>댓글 삭제</td>
+      <th>글 제목</th>
+      <th>내가 작성한 댓글 내용</th>
+      <th>댓글 작성일</th>
+      <th>댓글 삭제</th>
     </tr>
     {myCommentList.map((item, index) => (
       <tr key={index}>

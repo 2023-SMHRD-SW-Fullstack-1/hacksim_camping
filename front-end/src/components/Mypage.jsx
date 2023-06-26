@@ -38,7 +38,7 @@ const Mypage = () => {
   return (
     <div id='hj_mypage'>
       <div id='hj_user-container'>
-        <Link to='/update' style={{ textDecoration: "none", color: "black" }}>
+        <Link to='/mypage/update' style={{ textDecoration: "none", color: "black" }}>
           <div>내 정보 관리</div>
         </Link>
         <Link to='/mypage/mycomment' style={{ textDecoration: "none", color: "black" }}>

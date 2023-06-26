@@ -65,8 +65,10 @@ const Modal = ({setModalOpen,innerContent,setInnerContent, userCommentList,selec
 return (
     <td className="container">
       <span>수정할 내용을 입력하세요</span>
+      <div id = 'hj_commentContainer'>
          <input placeholder={content} type='text' onChange={contentHandler}/>
          <button  onClick={commentUpdate}>수정</button>
+         </div>
         <button  className="close" onClick={closeModal}>
             X
         </button>

@@ -2,11 +2,13 @@ import React, { useEffect } from 'react'
 import '../Mypage.css'
 const SearchPage = ({ world, setWorld, searchList }) => {
 
-    let searchWorld = '';
-    console.log(searchList.length);
-    const searchDataLength = searchList.length;
-
+    const [searchDataLength,setSearchDataLength] = ('')
     useEffect(() => {
+    let searchWorld = '';
+    console.log('검색결과 :',searchList.length);
+    setSearchDataLength(searchList.length);
+
+
 
         searchWorld = world
 
@@ -17,7 +19,8 @@ const SearchPage = ({ world, setWorld, searchList }) => {
 
 
 
-        <div id='hj_mypage'>
+        // <div id='hj_mypage'>
+        <div>
             <div id='hj_user-container'>검색결과 총{searchDataLength} 건 </div>
             <div id='hj_columns'>
                 {searchList.map((item, index) => (
