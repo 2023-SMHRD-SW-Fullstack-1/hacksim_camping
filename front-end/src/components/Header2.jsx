@@ -5,26 +5,26 @@ import axios from 'axios'
 import intro from '../../src/intro-video.gif'
 
 const Header2 = ({ world, setWorld, searchList, setSearchList }) => {
-    useEffect(() => {
-        if (document.querySelector('.search')) {
-            const searchEl = document.querySelector('.search');
-            const searchInputEl = searchEl.querySelector('input');
+    // useEffect(() => {
+    //     if (document.querySelector('.search')) {
+    //         const searchEl = document.querySelector('.search');
+    //         const searchInputEl = searchEl.querySelector('input');
 
-            searchEl.addEventListener('click', function () {
-                searchInputEl.focus();
-            });
+    //         searchEl.addEventListener('click', function () {
+    //             searchInputEl.focus();
+    //         });
 
-            searchInputEl.addEventListener('focus', function () {
-                searchEl.classList.add('focused');
-                searchInputEl.setAttribute('placeholder', '통합검색');
-            });
+    //         searchInputEl.addEventListener('focus', function () {
+    //             searchEl.classList.add('focused');
+    //             searchInputEl.setAttribute('placeholder', '통합검색');
+    //         });
 
-            searchInputEl.addEventListener('blur', function () {
-                searchEl.classList.remove('focused');
-                searchInputEl.setAttribute('placeholder', '');
-            });
-        }
-    }, [])
+    //         searchInputEl.addEventListener('blur', function () {
+    //             searchEl.classList.remove('focused');
+    //             searchInputEl.setAttribute('placeholder', '');
+    //         });
+    //     }
+    // }, [])
 
 
     // 게시글 검색 기능 ~
@@ -34,34 +34,32 @@ const Header2 = ({ world, setWorld, searchList, setSearchList }) => {
     //     e.preventDefault();
     //     setWorld(e.target.value)
     // }
-    const clickSearch = (e) => {
+  
       
-        console.log('클릭');
-        const handleSearch = async () => {
-            console.log(world);
-            setWorld(e.target.value)
-            try {
-                const response = await axios.post("/gocamping/search", { story_content: world })
-
-                if (response.status === 200) {
-                    console.log(response.data.length);
-                    console.log(response.data);
-
-                    setSearchList(response.data);
-
-                    nav('/searchpage');
-
-                }
-            } catch (error) {
-                if (error.response && error.response.status === 401) {
-                    console.error(error); // 오류 발생 시 에러 로그를 출력
-                    alert('데이터로드실패😥')
-                }
+        const clickSearch = async (e) => {
+          console.log('클릭');
+      
+          try {
+            setWorld(e.target.value);
+            const response = await axios.post("/gocamping/search", { story_content: world });
+      
+            if (response.status === 200) {
+              console.log(response.data.length);
+              console.log(response.data);
+      
+              setSearchList(response.data);
+              console.log('서치데이터 전송');
+              nav('/searchpage');
             }
+          } catch (error) {
+            if (error.response && error.response.status === 401) {
+              console.error(error); // 오류 발생 시 에러 로그를 출력
+              alert('데이터로드실패😥');
+            }
+          }
+ 
         };
-
-        handleSearch();
-    }
+    
     // clickSearch();
     // ~ 게시글 검색 기능
 
@@ -99,7 +97,8 @@ const Header2 = ({ world, setWorld, searchList, setSearchList }) => {
                         <Link to="/bestList" style={{ textDecoration: "none", color: "black" }}>
                             <div id="content">게시판</div>
                         </Link>
-
+                        <input type="text" value={world} onChange={(e) => { setWorld(e.target.value); console.log(world); }} placeholder="검색어 입력" />
+      <button onClick={clickSearch}>검색</button>
                         {/* 
                             <li>
                             <Link to={}>About</Link>  

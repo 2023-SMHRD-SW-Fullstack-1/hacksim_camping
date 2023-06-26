@@ -12,57 +12,58 @@ const Comment_test = () => {
     const loginuserEmail = localStorage.getItem("user_email");
     
     // const user_email = "테스트 중";
-    console.log('useremail',user_email);
+    console.log('useremail',loginuserEmail);
     console.log(`idx : ${idx}`);
-
+const getidx = `${idx}`;
       // 댓글 리스트
-      const StoryCommentList = async () =>{
-        try{
-          axios.get(`http://172.30.1.43:8088/gocamping/comunity/${idx}/comment1`,{story_idx : idx})
-          // axios.get(`http://172.30.1.9:8088/gocamping/comunity/${idx}/comment1`,{story_idx : idx})
-          .then((res)=>{
+  //     const StoryCommentList = async () =>{
+  //       try{
+  //         axios.get(`http://172.30.1.43:8088/gocamping/comunity/${idx}/comment1`,{story_idx : idx})
+  //         // axios.get(`http://172.30.1.9:8088/gocamping/comunity/${idx}/comment1`,{story_idx : idx})
+  //         .then((res)=>{
 
-            console.log('리스트 출력 성공');
-            console.log(res.data);
-            // console.log(response.data[0]);
-            setComments(res.data);
-          })
+  //           console.log('리스트 출력 성공');
+  //           console.log(res.data);
+  //           // console.log(response.data[0]);
+  //           setComments(res.data);
+  //         })
           
-        }catch(error){
-          if(error.response && error.response.status ===401){
-            alert('데이터 출력 실패')
-          }
-        }
-      }
+  //       }catch(error){
+  //         if(error.response && error.response.status ===401){
+  //           alert('데이터 출력 실패')
+  //         }
+  //       }
+  //     }
 
-  useEffect(()=>{
-    StoryCommentList(); //함수 호출 추가
+  // useEffect(()=>{
+  //   StoryCommentList(); //함수 호출 추가
     
-  },[])
+  // },[])
 
 
     //댓글 작성 기능
     const handleSubmit = async (e) => {
-      e.preventDefault();
+      // e.preventDefault();
 
-      const formData = new FormData();
-      formData.append('cmt_content', cmt_content);
-      formData.append('user_email', loginuserEmail);
+      // const formData = new FormData();
+      // formData.append('cmt_content', cmt_content);
+      // formData.append('user_email', loginuserEmail);
 
+      const commetData = {
+        cmt_idx: 1000,
+        story_idx: getidx,
+        cmt_content: cmt_content,
+        user_email:loginuserEmail
+      }
+  
+        axios.post('/gocamping/comunity/comment', commetData)
       
-      
-        axios.post(`http://172.30.1.43:8088/gocamping/comunity/${idx}/comment`, formData,
-        // axios.post(`http://172.30.1.9:8088/gocamping/comunity/${idx}/comment`, formData,
-        {
-            headers: {
-                'Content-Type' : 'application/json',
-            },
-        }
-        )
+       
+        
         .then((res)=>{
-            setcmt_Content("");
-            setComments([... comments, res.data]);
-            StoryCommentList();
+            // setcmt_Content("");
+            // setComments([... comments, res.data]);
+            // StoryCommentList();
         })
         .catch((error)=>{
             console.log(error);
@@ -81,7 +82,7 @@ const Comment_test = () => {
         // user_email : "aa@naver.com"
       }
       if(formData.user_email == null || formData.user_email == undefined) {
-        formData.userr_email = "";
+        formData.user_email = "";
       }
 
       console.log("user_email", user_email)
@@ -89,7 +90,7 @@ const Comment_test = () => {
         const response = await axios.post(`http://172.30.1.43:8088/gocamping/comunity/${e.target.value}/delete`, {user_email : loginuserEmail}) 
         // const response = await axios.post(`http://172.30.1.9:8088/gocamping/comunity/${e.target.value}/delete`, {user_email : loginuserEmail})
         .then((res)=>{
-          StoryCommentList();
+          // StoryCommentList();
         })
       }catch(error){
         if(error){

@@ -21,6 +21,7 @@ import com.smhrd.camping.domain.Category;
 import com.smhrd.camping.domain.Comment;
 import com.smhrd.camping.domain.Comunity;
 import com.smhrd.camping.domain.Tags;
+import com.smhrd.camping.domain.User;
 import com.smhrd.camping.mapper.CampingMapper;
 
 
@@ -86,11 +87,16 @@ public class ComunityService {
 	
 
 	//상세 게시물 조회
-	public Comunity ComunityOne(int idx) {
-		return mapper.ComunityOne(idx);	
+	public Comunity ComunityOne(int story_idx) {
+		return mapper.ComunityOne(story_idx);
 	}
 	
 	//댓글 작성
+	public int comment(Comment comment) {
+		return mapper.comment(comment);
+	}
+
+	
 
 	// 좋아요 높은 순으로 불러오기
 	public JSONArray LoadCommunityLike() {

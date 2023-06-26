@@ -7,6 +7,7 @@ import java.util.Map;
 
 import org.json.simple.JSONArray;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -15,6 +16,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RequestPart;
+import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.multipart.MultipartFile;
 
@@ -22,6 +24,7 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 import com.smhrd.camping.domain.Comment;
 import com.smhrd.camping.domain.Comunity;
 import com.smhrd.camping.domain.Tags;
+import com.smhrd.camping.domain.User;
 import com.smhrd.camping.service.ComunityService;
 
 @RestController
@@ -40,16 +43,17 @@ public class ComunityRestController {
 	
 
 	//상세 게시물 조회
-	@GetMapping("/comunity/{idx}")
-	public ResponseEntity<Comunity> ComunityOne(@PathVariable("idx") int idx) {
-		Comunity comunity = service.ComunityOne(idx);
+	@PostMapping("/comunity/one")
+	public Comunity ComunityOne(@RequestBody int story_idx) {
+		Comunity comunity = service.ComunityOne(story_idx);
+		
 		if(comunity != null) {
 			System.out.println("성공");
-			return ResponseEntity.ok(comunity);
+			return comunity;
 		}
 		else {
 			System.out.println("실패");
-			return ResponseEntity.notFound().build();
+			return null;
 		}
 	}
 		
@@ -136,15 +140,17 @@ public class ComunityRestController {
 	
 
 	//댓글 작성
-	@PostMapping("/comunity/{idx}/comment")
-    public ResponseEntity<Integer> comment(@PathVariable("idx") int idx, @RequestBody Map<String, Object> paramMap) {
-		System.out.println("aaa");
+	@PostMapping("/comunity/comment")
+    public int comment(@RequestBody Comment comment ) {
+		System.out.println("aaaaaaaaaaaaaaaa");
 		
-		String cmt_content = (String) paramMap.get("cmt_content");
-		String email = (String)paramMap.get("user_email");
-        int cmt = service.comment(idx, cmt_content, email);
-  
-        return ResponseEntity.ok(Integer.valueOf(cmt));
+		String getComment = comment.getCmt_content();
+		int getCmt_idx = comment.getCmt_idx();
+		String getUser_Email = comment.getUser_email();
+		
+        int cnt = service.comment(comment);
+  System.out.println("댓글추가 성공");
+        return cnt;
     }
 	
 	

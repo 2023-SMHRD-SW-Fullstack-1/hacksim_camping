@@ -38,6 +38,7 @@ import BestList from './components/BestList';
 import { GoogleLogin, GoogleOAuthProvider } from '@react-oauth/google';
 import Notice from './components/Notice';
 import intro from './intro-video.gif'
+import Comment_test from './components/Comment_test';
 
 
 function App() {
@@ -64,7 +65,7 @@ return(
                 {/* <Header world={world} setWorld={setWorld} searchList={searchList} setSearchList={setSearchList} /> */}
     
 
-      <Header2 world={world} setWorld={setWorld}/>
+      <Header2 world={world} setWorld={setWorld} searchList={searchList} setSearchList={setSearchList}/>
       {/* 여기가 동영상 코드 */}
       <div style={{height:"56px"}}></div>
       <div style={{height:'50vh',background:`url(${intro})`,backgroundSize:'cover', textAlign:"center", padding:"auto 0", display:"flex",justifyContent:"center" ,alignItems:"center"}}>
@@ -77,6 +78,7 @@ return(
 
                         
 		<Routes>
+           
                         {/* 메인 */}
                         <Route path='/' element={<Figure/>} />
                         {/* 헤더 */}
@@ -95,7 +97,7 @@ return(
                         <Route path='/comunity/ContentDetail/comment' element={<Comment />} />
                         <Route path="/comunity/ContentDeatil/:idx" element={<ContentDetail tableMarginTB={0} tableWidth={"100%"} contentImgWidth={"45%"} contentImgHeight={"80%"} comunity={comunity} setComunity={setComunity} />} />
 			<Route path="/comunity/contentDetail" element={<SyLoadBoardList />} />
-
+                        <Route path="/comunity/Contenttest/:idx" element={<Comment_test/>} />
 
                         {/* 마이페이지 */}
                         <Route path='/mypage/mycomment' element={<Comment_HJ />} />

@@ -1,23 +1,26 @@
-import React, { useEffect } from 'react'
+import React, { useEffect, useState } from 'react'
 import '../Mypage.css'
+import { useNavigate } from 'react-router-dom'
 const SearchPage = ({ world, setWorld, searchList }) => {
 
-    const [searchDataLength,setSearchDataLength] = ('')
+    const nav = useNavigate();
+    const [searchDataLength,setSearchDataLength] = useState('')
     useEffect(() => {
-    let searchWorld = '';
+    let searchWord = '';
+    console.log('서치페이지입니다');
     console.log('검색결과 :',searchList.length);
     setSearchDataLength(searchList.length);
 
 
 
-        searchWorld = world
+        // searchWorld = world
 
 
     }, [])
 
     return (
 
-
+       
 
         // <div id='hj_mypage'>
         <div>
@@ -25,7 +28,7 @@ const SearchPage = ({ world, setWorld, searchList }) => {
             <div id='hj_columns'>
                 {searchList.map((item, index) => (
                     <figure key={index}>
-                        <img src={`http://localhost:8088/gocamping/${item.story_img}`} alt={`Image ${index}`} />
+                        <img onClick={()=>{nav(`/comunity/ContentDeatil/${item.story_idx}`)}} src={`http://localhost:8088/gocamping/${item.story_img}`} alt={`Image ${index}`} />
                         <figcaption>{item.story_title}</figcaption>
                     </figure>
                 ))}

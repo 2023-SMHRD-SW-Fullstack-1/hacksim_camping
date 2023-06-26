@@ -10,20 +10,23 @@ const ContentDetail = ({tableMarginTB, contentImgHeight, contentImgWidth, tableW
 
 	let realImgUrl = ""
 	const {idx} = useParams();
-	
+	const story_idx = `${idx}`;
+
+
 
 	
 	console.log(`Index Value: ${idx}`);
-
+console.log('스토리인덱스 :',story_idx);
 	useEffect(() =>{
-		console.log(idx);
-		let url=`http://172.30.1.43:8088/gocamping/comunity/${idx}`;
-		// let url=`http://172.30.1.9:8088/gocamping/comunity/${idx}`;
-		axios
-		.get(url)
+		axios.post('/gocamping/comunity/one', story_idx, {
+			headers: {
+			  'Content-Type': 'application/json'
+			}
+		  })
 		.then((res) => {
-		  console.log('API Response:', res.data);
+		  console.log('게시판 디테일 가져오기', res.data);
 		  setComunity(res.data);
+		  
 		})
 		.catch((error) => {
 		  console.log('API Error:', error);

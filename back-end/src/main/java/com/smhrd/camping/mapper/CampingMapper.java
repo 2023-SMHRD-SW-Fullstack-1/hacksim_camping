@@ -2,12 +2,15 @@ package com.smhrd.camping.mapper;
 
 import java.util.List;
 
+import org.apache.ibatis.annotations.Insert;
 import org.apache.ibatis.annotations.Mapper;
+import org.apache.ibatis.annotations.Select;
 
 import com.smhrd.camping.domain.Category;
 import com.smhrd.camping.domain.Comment;
 import com.smhrd.camping.domain.Comunity;
 import com.smhrd.camping.domain.Tags;
+import com.smhrd.camping.domain.User;
 
 @Mapper
 public interface CampingMapper {
@@ -16,7 +19,7 @@ public interface CampingMapper {
 	public List<Comunity> ComunityList(); //게시판 게시물 조회
 	
 
-	public Comunity ComunityOne(int idx); //Comunity.java에 있는 글순번 idx, 상세 게시물 조회
+	
 	
 	public int write(Comunity comunity); //게시물 작성
 	
@@ -24,7 +27,15 @@ public interface CampingMapper {
 	
 	public List<Category> CategoryStep(); //상품 카테고리 스텝
 	
-	public int comment(Comment cmt); //댓글 작성
+	
+	//상세 게시물에 댓글 추가
+	@Insert("insert into tb_comment(cmt_idx,story_idx,cmt_content,user_email) values(#{cmt_idx},#{story_idx},#{cmt_content},#{user_email})")
+	public int comment(Comment comment); //댓글 작성
+	
+	//상세 게시물 불러오기
+	@Select("select * from tb_story where story_idx=#{story_idx}")
+	public Comunity ComunityOne(int story_idx);
+	
 	
 	public  List<Comment> CommentList(int idx); //댓글 리스트 
 	
