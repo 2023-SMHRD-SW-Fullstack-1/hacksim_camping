@@ -12,12 +12,13 @@ const ContentDetail = ({tableMarginTB, contentImgHeight, contentImgWidth, tableW
 	const {idx} = useParams();
 	const story_idx = `${idx}`;
 
-
+const [link,setLink] = useState('');
 
 	
 	console.log(`Index Value: ${idx}`);
 console.log('스토리인덱스 :',story_idx);
 	useEffect(() =>{
+		getLink();
 		axios.post('/gocamping/comunity/one', story_idx, {
 			headers: {
 			  'Content-Type': 'application/json'
@@ -31,7 +32,34 @@ console.log('스토리인덱스 :',story_idx);
 		.catch((error) => {
 		  console.log('API Error:', error);
 		});
+		
 	},[])
+
+	//링크 가져오기
+	const getLink = async () => {
+
+        const linkData = {
+          story_idx: story_idx
+        }
+        try {
+            const response = await axios.post('/gocamping/getlink', linkData)
+
+            if (response.status === 200) {
+                // alert('링크가져오기 성공');
+
+                setLink(response.data)
+				console.log('링크 : ',response.data);
+
+                console.log(link)
+
+            }
+        } catch (error) {
+            if (error.response && error.response.status === 401) {
+                alert("링크 가져오기실패")
+            }
+
+        }
+    };
 	
 	// realImgUrl = "https://images.unsplash.com/photo-1620439032751-d2011065c735?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mzh8fHRlbnR8ZW58MHx8MHx8fDA%3D&auto=format&fit=crop&w=500&q=60"
 	return (
@@ -59,12 +87,15 @@ console.log('스토리인덱스 :',story_idx);
 						{comunity.story_img!=undefined&& <td style={{ border: "1px solid pink" }}> <img width='250px' src={`http://172.30.1.43:8088/gocamping/${comunity.story_img}`}/> </td>}
 						</td>
 					</tr>
-
+						
 					<tr style={{ border: "1px solid pink" }}>
 						<th>내용</th>
 						<td style={{ border: "1px solid pink" }}>오늘 캠핑 다녀 왔어요~</td>
+						
 					</tr>
 				</tbody>
+				<a href={link}>제품 구경하러 가기</a>
+				{/* <a href="www.naver.com/" title="제품 구경하러 가기">제품 구경하러 가기</a> */}
 			</table>
 			
 

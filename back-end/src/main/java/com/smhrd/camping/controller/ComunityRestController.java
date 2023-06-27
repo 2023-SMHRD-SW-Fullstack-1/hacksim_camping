@@ -26,6 +26,7 @@ import com.smhrd.camping.domain.Comunity;
 import com.smhrd.camping.domain.Tags;
 import com.smhrd.camping.domain.User;
 import com.smhrd.camping.service.ComunityService;
+import com.smhrd.camping.service.SearchService;
 
 @RestController
 @CrossOrigin("http://localhost:3000")
@@ -34,6 +35,8 @@ public class ComunityRestController {
 	@Autowired
 	private ComunityService service;
 	
+	@Autowired
+	private SearchService poiservice;
 	//게시판 게시물 목록 조회
 	@GetMapping("/comunity")
 	public JSONArray ComunityList() {
@@ -42,6 +45,25 @@ public class ComunityRestController {
 	}
 	
 
+	//게시물 링크 가져오기
+
+		@PostMapping("/getlink")
+		public String getLink(@RequestBody Tags story_idx) {
+			
+			int getlink = story_idx.getStory_idx();
+			String linkdata = poiservice.getLink(getlink);
+
+			if(linkdata != null) {
+				System.out.println("링크성공");
+				return linkdata;
+			}
+			else {
+				System.out.println("링크실패");
+				return null;
+			}
+		}
+	
+	
 	//상세 게시물 조회
 	@PostMapping("/comunity/one")
 	public Comunity ComunityOne(@RequestBody int story_idx) {

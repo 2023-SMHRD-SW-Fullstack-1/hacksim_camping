@@ -26,6 +26,11 @@ public class SearchService {
 
 	private static final String UPLOAD_DIRECTORY = "static/img"; // 리액트 웹에서 접근 가능한 경로
 
+	//링크 가져오기 기능
+	public String getLink(int getlink) {
+		return mapper.getLink(getlink);
+	}
+	
 	// 검색기능
 	public List<Comunity> Search(String getWorld) {
 		return mapper.Search(getWorld);

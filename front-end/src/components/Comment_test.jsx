@@ -76,30 +76,30 @@ const getidx = `${idx}`;
 
 
     //댓글 삭제 기능
-    const DeleteComment = async (e)=>{
-      let formData = {
-        user_email : loginuserEmail
-        // user_email : "aa@naver.com"
-      }
-      if(formData.user_email == null || formData.user_email == undefined) {
-        formData.user_email = "";
-      }
+    // const DeleteComment = async (e)=>{
+    //   let formData = {
+    //     user_email : loginuserEmail
+    //     // user_email : "aa@naver.com"
+    //   }
+    //   if(formData.user_email == null || formData.user_email == undefined) {
+    //     formData.user_email = "";
+    //   }
 
-      console.log("user_email", user_email)
-      try{
-        const response = await axios.post(`http://172.30.1.43:8088/gocamping/comunity/${e.target.value}/delete`, {user_email : loginuserEmail}) 
-        // const response = await axios.post(`http://172.30.1.9:8088/gocamping/comunity/${e.target.value}/delete`, {user_email : loginuserEmail})
-        .then((res)=>{
-          // StoryCommentList();
-        })
-      }catch(error){
-        if(error){
-          console.log(error);
-        }
-      }
+    //   console.log("user_email", user_email)
+    //   try{
+    //     const response = await axios.post(`http://172.30.1.43:8088/gocamping/comunity/${e.target.value}/delete`, {user_email : loginuserEmail}) 
+    //     // const response = await axios.post(`http://172.30.1.9:8088/gocamping/comunity/${e.target.value}/delete`, {user_email : loginuserEmail})
+    //     .then((res)=>{
+    //       // StoryCommentList();
+    //     })
+    //   }catch(error){
+    //     if(error){
+    //       console.log(error);
+    //     }
+    //   }
       
 
-    }
+    // }
     
   
     return (
@@ -108,7 +108,7 @@ const getidx = `${idx}`;
             <div>
               <p>{item.cmt_idx}</p>
               <p>{item.cmt_content}</p>
-              <button value={item.cmt_idx} onClick={DeleteComment}>삭제</button>
+              {/* <button value={item.cmt_idx} onClick={DeleteComment}>삭제</button> */}
             </div>
           ))}
           

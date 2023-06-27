@@ -51,7 +51,7 @@ const Mypage = () => {
         <div id='hj_columns'>
           {myStory.map((item, index) => (
             <figure id='hj_columns figure img' key={index}>
-              <img src={`http://localhost:8088/gocamping/${item.story_img}`} alt={`Image ${index}`} />
+              <img onClick={()=>{nav(`/comunity/ContentDeatil/${item.story_idx}`)}} src={`http://localhost:8088/gocamping/${item.story_img}`} alt={`Image ${index}`} />
               <figcaption>{item.story_title}</figcaption>
             </figure>
           ))}

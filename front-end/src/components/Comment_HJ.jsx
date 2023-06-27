@@ -2,10 +2,11 @@ import axios from 'axios';
 import React, { useEffect, useState } from 'react'
 import '../CommentTable.css'
 import Modal from './Modal';
+import { useNavigate } from 'react-router-dom';
 
 
 const Comment_HJ = ({idxnum,setIdxNum}) => {
-
+  const nav = useNavigate();
    //모달기능
    const [modalOpen, setModalOpen] = useState(false);
 
@@ -84,13 +85,15 @@ const [innerContent,setInnerContent] = useState();
 
   }
 
- 
-  
+  const commentExist = myCommentList.length != 0;
+
 
   return (
 
 <div id='commentTable'>
   <div id='hj_comment'>작성 댓글</div>
+
+  {commentExist ? (
 <table  border="1" align='center' width={600}>
   <tbody align='center'>
     <tr>
@@ -101,7 +104,7 @@ const [innerContent,setInnerContent] = useState();
     </tr>
     {myCommentList.map((item, index) => (
       <tr key={index}>
-        <td>{item.story_title}</td>
+        <td onClick={()=>{nav(`/comunity/ContentDeatil/${item.story_idx}`)}}>{item.story_title}</td>
         <td style={{cursor:'pointer'}} value={item.cmt_idx} onClick={showModal}>{item.cmt_content}</td>
         <td>{item.cmt_dt}</td>
         <td><button onClick={CommentHandler} value={item.cmt_idx}>삭제</button></td>
@@ -120,6 +123,9 @@ const [innerContent,setInnerContent] = useState();
     ))}
   </tbody>
 </table>
+  ) :(
+    <div>작성 댓글이 없습니다</div>
+  )}
 </div>
 );
         }

@@ -12,10 +12,8 @@ const KakaoCallBack = ({ }) => {
     const code = params.get("code");
     const grant_type = "authorization_code";
 
-    //혜주 
+  
     const client_id = process.env.REACT_APP_REST_API_KEY;
-
-    // const client_id = "c7cdf149cf26d90f317204cd9e5a046f";
 
     const REDIRECT_URI = 'http://localhost:3000/kakaocallback';
 
