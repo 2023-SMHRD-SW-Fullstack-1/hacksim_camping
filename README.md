@@ -110,6 +110,10 @@
 
 ## 🖥 화면 구성
 
+### 메인화면
+![image](https://github.com/2023-SMHRD-SW-Fullstack-1/hacksim_camping/assets/128361686/89340712-81f5-4770-bd28-0f656a4e4d06)
+
+
 ### 로그인/회원가입/회원관리/회원수정/회원탈퇴
 
 ![image](https://github.com/2023-SMHRD-SW-Fullstack-1/hacksim_camping/assets/128361686/bdf6d239-1675-46aa-b540-d4ecfa6d10d5)
