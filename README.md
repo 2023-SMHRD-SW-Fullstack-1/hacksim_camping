@@ -126,6 +126,12 @@
 
 <br>
 
+### 게시물 업로드 : 사진 업로드 및 제품 태그 좌표 설정 
+![image](https://github.com/2023-SMHRD-SW-Fullstack-1/hacksim_camping/assets/128361686/6ed01ce0-7a47-4e6f-9c9c-46d510b4624a)
+
+
+<br>
+
 ### 시연영상
 https://www.dropbox.com/s/g70y5nosr07sf7y/%EC%8B%9C%EC%97%B0%EC%98%81%EC%83%81.mp4?dl=0
 <br>
