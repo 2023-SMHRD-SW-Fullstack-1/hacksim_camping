@@ -111,6 +111,9 @@
 ## 🖥 화면 구성
 
 ### 로그인/회원가입/회원관리/회원수정/회원탈퇴
+
+![image](https://github.com/2023-SMHRD-SW-Fullstack-1/hacksim_camping/assets/128361686/bdf6d239-1675-46aa-b540-d4ecfa6d10d5)
+
 ![image](https://github.com/2023-SMHRD-SW-Fullstack-1/hacksim_camping/assets/128361686/d7b7cb55-c68f-4a2b-b4bb-511ee2bf0bec)
 
 ![image](https://user-images.githubusercontent.com/25995055/178401098-95f15a0e-a2de-415e-83d5-883bb4cb0656.png)
@@ -125,8 +128,8 @@
 ![image](https://user-images.githubusercontent.com/25995055/178401127-287e6de2-4396-49fc-a107-59c4d5cd55c7.png)
 <br>
 
-### 일정/고객센터
-![image](https://user-images.githubusercontent.com/25995055/178401150-861f0e93-0f40-4fae-98c1-2099bf513c8d.png)
+### 시연영상
+
 <br>
 
 ## 👨‍👩‍👦‍👦 팀원 역할
