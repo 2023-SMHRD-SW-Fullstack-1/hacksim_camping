@@ -114,9 +114,6 @@
 
 ![image](https://github.com/2023-SMHRD-SW-Fullstack-1/hacksim_camping/assets/128361686/bdf6d239-1675-46aa-b540-d4ecfa6d10d5)
 
-![image](https://github.com/2023-SMHRD-SW-Fullstack-1/hacksim_camping/assets/128361686/d7b7cb55-c68f-4a2b-b4bb-511ee2bf0bec)
-
-![image](https://user-images.githubusercontent.com/25995055/178401098-95f15a0e-a2de-415e-83d5-883bb4cb0656.png)
 <br>
 
 ### 마이페이지 : 작성 게시물 조회
@@ -124,12 +121,13 @@
 
 <br>
 
-### 옷 정보/코디 추천(날씨, 팁, 오늘의 코디, 참고할 수 있는 코디)
-![image](https://user-images.githubusercontent.com/25995055/178401127-287e6de2-4396-49fc-a107-59c4d5cd55c7.png)
+### 관리자 페이지 : 회원 게시글 관리 및 회원 관리
+![image](https://github.com/2023-SMHRD-SW-Fullstack-1/hacksim_camping/assets/128361686/1f1f81ac-0c70-47d4-a311-1e7ef7bd24ed)
+
 <br>
 
 ### 시연영상
-
+https://www.dropbox.com/s/g70y5nosr07sf7y/%EC%8B%9C%EC%97%B0%EC%98%81%EC%83%81.mp4?dl=0
 <br>
 
 ## 👨‍👩‍👦‍👦 팀원 역할
@@ -140,7 +138,12 @@
 프로젝트 진행하는 동안 발생했던 이슈 중 가장 기억에 남았던 문제와 해결 프로세스 나열(2~5가지 정도)
   
 * 문제1<br>
- 문제점 설명 및 해결방안
+SNS 로그인 (KAKAO API) 
+![image](https://github.com/2023-SMHRD-SW-Fullstack-1/hacksim_camping/assets/128361686/e74a2dd7-a4c6-44d7-9b86-0c7f05c2db60)
+
  
 * 문제2<br>
- 문제점 설명 및 해결방안
+댓글 수정 오류
+![image](https://github.com/2023-SMHRD-SW-Fullstack-1/hacksim_camping/assets/128361686/46b0fc24-52c2-40b0-b5a3-e7666d94600a)
+
+
