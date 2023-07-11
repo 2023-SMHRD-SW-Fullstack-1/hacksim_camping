@@ -83,29 +83,42 @@
     </tr>
 </table>
 
+![사용언어](https://github.com/2023-SMHRD-SW-Fullstack-1/hacksim_camping/assets/128361686/016786e8-1145-4e72-a44d-8046c3cd50a7)
+
 
 <br>
 
 ## ⚙ 시스템 아키텍처(구조) 예시 
-![서비스 아키텍처](https://user-images.githubusercontent.com/25995055/169925538-15867bd9-aa0b-42fc-a39b-88981e926e51.png)
+![서비스아키텍처](https://github.com/2023-SMHRD-SW-Fullstack-1/hacksim_camping/assets/128361686/91d7d3eb-fcf8-450f-8a2c-756f26ac6b96)
+
 <br>
 
 ## 📌 SW유스케이스
-![image](https://user-images.githubusercontent.com/25995055/178401023-9a015e66-aa6e-4d74-8564-9b1f9d306649.png)
+![유스케이스](https://github.com/2023-SMHRD-SW-Fullstack-1/hacksim_camping/assets/128361686/b1825d5c-b5fe-4c0e-a84a-37f24c3a1091)
+
 <br>
 
 ## 📌 서비스 흐름도
-![image](https://user-images.githubusercontent.com/25995055/178401048-d6484bda-a2d7-40e1-998b-2bd195cd9f89.png)
+![서비스흐름도2](https://github.com/2023-SMHRD-SW-Fullstack-1/hacksim_camping/assets/128361686/434b5ecd-6d48-4544-9f66-124e7615a026)
+
 <br>
 
 ## 📌 ER다이어그램
-![image](https://user-images.githubusercontent.com/25995055/169925318-102784c2-893f-4fd7-bec9-a54c44b669d4.png)
+![ERD](https://github.com/2023-SMHRD-SW-Fullstack-1/hacksim_camping/assets/128361686/a65d44e0-d7d0-48f8-88c9-f9419c90f941)
+
 <br>
 
 ## 🖥 화면 구성
 
-### 로그인/회원가입/회원괸리/회원수정/회원탈퇴
+### 로그인/회원가입/회원관리/회원수정/회원탈퇴
+![image](https://github.com/2023-SMHRD-SW-Fullstack-1/hacksim_camping/assets/128361686/d7b7cb55-c68f-4a2b-b4bb-511ee2bf0bec)
+
 ![image](https://user-images.githubusercontent.com/25995055/178401098-95f15a0e-a2de-415e-83d5-883bb4cb0656.png)
+<br>
+
+### 마이페이지 : 작성 게시물 조회
+![마이페이지](https://github.com/2023-SMHRD-SW-Fullstack-1/hacksim_camping/assets/128361686/af9ee7b8-c547-4518-8ef0-d0fa06ae7ca2)
+
 <br>
 
 ### 옷 정보/코디 추천(날씨, 팁, 오늘의 코디, 참고할 수 있는 코디)
@@ -117,36 +130,7 @@
 <br>
 
 ## 👨‍👩‍👦‍👦 팀원 역할
-<table>
-  <tr>
-    <td align="center"><img src="https://item.kakaocdn.net/do/fd49574de6581aa2a91d82ff6adb6c0115b3f4e3c2033bfd702a321ec6eda72c" width="100" height="100"/></td>
-    <td align="center"><img src="https://mb.ntdtv.kr/assets/uploads/2019/01/Screen-Shot-2019-01-08-at-4.31.55-PM-e1546932545978.png" width="100" height="100"/></td>
-    <td align="center"><img src="https://mblogthumb-phinf.pstatic.net/20160127_177/krazymouse_1453865104404DjQIi_PNG/%C4%AB%C4%AB%BF%C0%C7%C1%B7%BB%C1%EE_%B6%F3%C0%CC%BE%F0.png?type=w2" width="100" height="100"/></td>
-    <td align="center"><img src="https://i.pinimg.com/236x/ed/bb/53/edbb53d4f6dd710431c1140551404af9.jpg" width="100" height="100"/></td>
-    <td align="center"><img src="https://pbs.twimg.com/media/B-n6uPYUUAAZSUx.png" width="100" height="100"/></td>
-  </tr>
-  <tr>
-    <td align="center"><strong>홍O동</strong></td>
-    <td align="center"><strong>홍O동</strong></td>
-    <td align="center"><strong>홍O동</strong></td>
-    <td align="center"><strong>홍O동</strong></td>
-    <td align="center"><strong>홍O동</strong></td>
-  </tr>
-  <tr>
-    <td align="center"><b>Frontend</b></td>
-    <td align="center"><b>Frontend</b></td>
-    <td align="center"><b>Backend</b></td>
-    <td align="center"><b>Backend</b></td>
-    <td align="center"><b>Deep Learning</b></td>
-  </tr>
-  <tr>
-    <td align="center"><a href="https://github.com/자신의username작성해주세요" target='_blank'>github</a></td>
-    <td align="center"><a href="https://github.com/자신의username작성해주세요" target='_blank'>github</a></td>
-    <td align="center"><a href="https://github.com/자신의username작성해주세요" target='_blank'>github</a></td>
-    <td align="center"><a href="https://github.com/자신의username작성해주세요" target='_blank'>github</a></td>
-    <td align="center"><a href="https://github.com/자신의username작성해주세요" target='_blank'>github</a></td>
-  </tr>
-</table>
+![팀원소개](https://github.com/2023-SMHRD-SW-Fullstack-1/hacksim_camping/assets/128361686/57e418bb-eca9-4ef3-9851-bdb87487e53a)
 
 ## 🤾‍♂️ 트러블슈팅
 개념: 문제 해결을 위해 문제의 원인을 논리적이고 체계적으로 찾는 일이며 제품이나 프로세스의 운영을 재개
